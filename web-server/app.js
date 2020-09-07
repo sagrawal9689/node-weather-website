@@ -9,9 +9,7 @@ const publicDirectoryPath= path.join(__dirname,'../Public')
 
 app.use(express.static(publicDirectoryPath))
 
-app.listen(3000,()=>{
-    console.log('server started')
-})
+const port= process.env.PORT
 
 app.get('/weather',(req,res)=>
 {
@@ -46,3 +44,12 @@ app.get('/weather',(req,res)=>
     
 })
 
+app.get('*',(req,res)=>{
+    res.send('404')
+})
+
+
+
+app.listen(port,()=>{
+    console.log('server started')
+})

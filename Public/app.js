@@ -9,7 +9,7 @@ btnHandler.addEventListener('click',(e)=>{
 
     message.innerHTML= 'loading...'
 
-    fetch('http://localhost:3000/weather?address='+textHandler.value).then((response)=>{
+    fetch('/weather?address='+textHandler.value).then((response)=>{
 
         response.json().then((data)=>{
 
